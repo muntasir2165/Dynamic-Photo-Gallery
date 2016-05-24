@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
 <title>Responsive Photo Gallery</title>
 	
     <!-- Bootstrap -->
@@ -92,7 +91,7 @@
 			    			//clear the image div container from previous query results (if any)
 			    			//specify the number of pictures per row
 			    			$("#photoGallery").empty();
-			    			var picsPerRow = 4;
+			    			var picsPerRow = 3;
 			    			for(var i = 0; i < totalHits; i++) {
 								var picObject = result["hits"][i];
 								var picUrl = picObject["webformatURL"];
@@ -100,12 +99,12 @@
 							  		var newRow = '<div class="row">';
 							  		$("#photoGallery").append(newRow);
 							  	}
-							 	var htmlImage = '<img src=' + picUrl + ' style="margin: 0.5%; width: 250px; height: 250px;"' + ' class="col-md-3 img-thumbnail">';
+							 	var htmlImage = '<img src=' + picUrl + ' style="margin: 0.5%; width: 250px; height: 250px;"' + ' class="col-md-4 img-thumbnail">';
 								$("#photoGallery").append(htmlImage);
 								if (picsPerRow == 1) {
 							  		var endRow = '</div>';
 							  		$("#photoGallery").append(endRow);
-							  		picsPerRow = 4;
+							  		picsPerRow = 3;
 							  		continue;
 							    }
 							    picsPerRow--;
